@@ -5,7 +5,6 @@ var makeStack = function() {
 
   _.extend(instance, stackMethods);
 
-  console.log(instance);
   return instance;
 };
 
