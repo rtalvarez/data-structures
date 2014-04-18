@@ -35,28 +35,13 @@ makeBinarySearchTree.methods = {
 
     return found;
   },
-  depthFirstLog: function() {
-
+  depthFirstLog: function(func) {
+    func(this.value);
+    if (this.right) {
+      this.right.depthFirstLog(func);
+    }
+    if (this.left) {
+      this.left.depthFirstLog(func);
+    }
   }
 };
-
-
-// var myBST = makeBinarySearchTree(8);
-
-// {
-//   value: 8,
-//   right: {},
-//   left: {}
-// }
-
-
-// myBST.insert(10);
-
-
-// var test = 10;
-
-// if (test > myBST.value) {
-//   // go right
-// } else {
-//   // go left
-// }
