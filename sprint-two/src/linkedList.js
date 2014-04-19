@@ -7,7 +7,7 @@ var makeLinkedList = function(){
 
     var newNode = makeNode(value);
 
-    if (!list.head && !list.tail) {
+    if (!list.head) {
       list.head = newNode;
       list.tail = newNode;
     } else {
@@ -24,18 +24,25 @@ var makeLinkedList = function(){
   };
 
   list.contains = function(target, node){
+    // node = node || list.head;
+    // while(node.next !== null){
+    //   if (node.value === target){
+    //     return true;
+    //   } else {
+    //     node = node.next;
+    //   }
+    // }
+
+    // return node.value === target;
+    //
     node = node || list.head;
-    while(node.next !== null){
-      if (node.value === target){
-        return true;
-      } else {
-        node = node.next;
-      }
+    if (node.value === target){
+      return true;
+    } else if (node.next) {
+      return this.contains(target, node.next);
     }
 
-    return node.value === target;
-    // Doing this because the while loop will always
-    // not check the last node.
+    return false;
   };
 
   return list;
