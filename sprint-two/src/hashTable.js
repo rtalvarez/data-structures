@@ -5,14 +5,9 @@ var HashTable = function(){
 
 HashTable.prototype.insert = function(key, value){
   var i = getIndexBelowMaxForKey(key, this._limit);
-  // if value at storage[i] is truthy
-  //   then push new [key, value] to storage[i]
-  // otherwise
-  //   add [[key, value]] at storage[i]
   var bucket = this._storage.get(i);
   if (bucket) {
     var keyFound = false;
-    // TODO: still need to check if there is a dup
     for (var j = 0; j < bucket.length; j++){
       if (bucket[j][0] === key){
         bucket[j][1] = value;
@@ -51,19 +46,3 @@ HashTable.prototype.remove = function(key){
   }
   return null;
 };
-
-// var hashTable = new HashTable();
-
-// hashTable.insert("ramin", "taleghani");
-
-var a =  [[['cat', 'unfrie'], ['lkjdf', 'aslk']],
-          undefined,
-          undefined,
-          undefined,
-          [['bob', 'cpladf']]];
-
-var b =  [[['cat', 'unfrie'], ['lkjdf', 'aslk']],
-          undefined,
-          undefined,
-          undefined,
-          [['bob', 'cpladf']]];
