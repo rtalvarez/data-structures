@@ -37,11 +37,11 @@ makeBinarySearchTree.methods = {
   },
   depthFirstLog: function(func) {
     func(this.value);
-    if (this.right) {
-      this.right.depthFirstLog(func);
-    }
     if (this.left) {
       this.left.depthFirstLog(func);
+    }
+    if (this.right) {
+      this.right.depthFirstLog(func);
     }
   }
 };

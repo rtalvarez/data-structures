@@ -17,11 +17,11 @@ var makeLimitedArray = function(limit){
   var limitedArray = {};
   limitedArray.get = function(index){
     checkLimit(index);
-    return storage[index];
+    return storage[index]; //['s','sd']
   };
   limitedArray.set = function(index, value){
     checkLimit(index);
-    storage[index] = value;
+    storage[index] = value; // storage[index] = ['s','sd']
   };
   limitedArray.each = function(callback){
     for(var i = 0; i < storage.length; i++){
