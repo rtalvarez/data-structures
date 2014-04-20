@@ -30,15 +30,16 @@ describe("linkedList", function() {
     linkedList.addToTail(4);
     linkedList.addToTail(5);
     expect(linkedList.head.value).to.equal(4);
-    console.log(linkedList)
+    // console.log(linkedList)
     linkedList.removeHead();
-        console.log(linkedList) 
+        // console.log(linkedList)
     expect(linkedList.head.value).to.equal(5);
   });
 
   it("should contain a value that was added", function(){
     linkedList.addToTail(4);
     linkedList.addToTail(5);
+    console.log(linkedList);
     assert.isTrue(linkedList.contains(4));
     assert.isTrue(linkedList.contains(5));
     assert.isFalse(linkedList.contains(6));
